@@ -1,0 +1,13 @@
+port: /dev/ttyUSB0
+baudrate: 9600
+# Set this to empty string to disable prefix
+# i.e. topic_name_prefix: ''
+topic_name_prefix: encoder
+topic_name_count: count
+topic_name_speed: speed
+# In Hz
+frequency: 1000
+# In meters
+wheel_diameter: 0.5078
+# 4 times the pulses per rotation from the transducer
+counts_per_rotation: 2000

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>cnt723</name>
+  <version>0.1.0</version>
+  <description>Coco Research CNT-723 Driver</description>
+
+  <maintainer email="mizuno.naoki@rm.is.tohoku.ac.jp">Naoki Mizuno</maintainer>
+
+  <license>MIT</license>
+
+  <url type="website">https://github.com/naoki-mizuno/cnt723</url>
+
+  <author email="mizuno.naoki@rm.is.tohoku.ac.jp">Naoki Mizuno</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>serial</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>serial</run_depend>
+</package>
