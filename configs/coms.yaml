@@ -1,5 +1,4 @@
 port: /dev/ttyUSB2
 baudrate: 9600
-topic_name: encoder_count
 # In Hz
 frequency: 100

@@ -8,18 +8,17 @@
 int
 main(int argc, char* argv[]) {
     ros::init(argc, argv, "cnt723_node");
-    ros::NodeHandle nh{"~"};
+    ros::NodeHandle nh;
+    ros::NodeHandle nh_p{"~"};
 
     // Get parameters
     std::string port;
     int baudrate;
-    std::string topic_name;
     float frequency;
 
-    nh.getParam("port", port);
-    nh.param("baudrate", baudrate, 9600);
-    nh.param("topic_name", topic_name, std::string{"encoder_count"});
-    nh.param("frequency", frequency, static_cast<float>(100));
+    nh_p.getParam("port", port);
+    nh_p.param("baudrate", baudrate, 9600);
+    nh_p.param("frequency", frequency, static_cast<float>(100));
 
     Cnt723 cnt723{port, static_cast<unsigned>(baudrate)};
     try {
@@ -37,7 +36,7 @@ main(int argc, char* argv[]) {
         return 1;
     }
 
-    ros::Publisher count_pub = nh.advertise<std_msgs::UInt32>(topic_name, 1);
+    ros::Publisher count_pub = nh.advertise<std_msgs::UInt32>("cnt723/count", 1);
     ros::Rate r{frequency};
 
     std_msgs::UInt32 msg_count;
