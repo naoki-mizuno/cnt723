@@ -1,19 +1,19 @@
 # CNT-723 driver
 
-This is a module that provides the ROS driver for the CNT-723 rotary encoder.
+ROS driver for the [CNT-723 rotary encoder](http://www.cocores.co.jp/english/cnt723.htm) and [peiseler 1283 RS](http://www.sensores-de-medida.es/uploads/motion_transducer_mt_kfz_engl.pdf).
 
 ## Dependencies
 
 ROS modules that this package depends on:
 
-- serial
+- [serial](http://wiki.ros.org/serial)
 
 ## Usage
 
 Clone, build, and install using catkin:
 
 ```
-$ git clone https://github.com/naoki-mizuno/cnt723 ~/ros/catkin_ws/src/cnt723
+$ git clone https://github.com/tado-aev/cnt723 ~/ros/catkin_ws/src/cnt723
 $ cd ~/ros/catkin_ws
 $ catkin_make
 $ source devel/setup.zsh
@@ -25,18 +25,19 @@ $ roslaunch cnt723 cnt723_node.launch
 - `port`: the port name where the CNT-723 is connected to
 - `baudrate`: the baud rate
 - `frequency`: the control loop frequency
-- `wheel_diameter`: the diameter of the wheel where the transducer is attached
-  to
-- `counts_per_rotation`: how many counts there are in one rotation
+
+## Published Topics
+
+- `cnt723/count`: raw pulse count from the encoder
 
 ## Caveats
 
 Program mode is currently not supported.
 
-## Author
-
-Naoki Mizuno
-
 ## License
 
 MIT License
+
+## Author
+
+Naoki Mizuno
