@@ -1,7 +1,7 @@
 #include <cnt723/cnt723.h>
 
 #include <ros/ros.h>
-#include <std_msgs/UInt32.h>
+#include <coms_msgs/ComsEncoder.h>
 
 #include <string>
 
@@ -36,14 +36,18 @@ main(int argc, char* argv[]) {
         return 1;
     }
 
-    ros::Publisher count_pub = nh.advertise<std_msgs::UInt32>("cnt723/count", 1);
+    ros::Publisher count_pub = nh.advertise<coms_msgs::ComsEncoder>("cnt723/count", 1);
     ros::Rate r{frequency};
 
-    std_msgs::UInt32 msg_count;
+    unsigned seq = 0;
+    coms_msgs::ComsEncoder msg;
     while (ros::ok()) {
-        msg_count.data = cnt723.get_count();
+        msg.header.seq = seq++;
+        msg.header.stamp = ros::Time::now();
+        msg.header.frame_id = "0";
+        msg.count = cnt723.get_count();
 
-        count_pub.publish(msg_count);
+        count_pub.publish(msg);
 
         ros::spinOnce();
         r.sleep();
