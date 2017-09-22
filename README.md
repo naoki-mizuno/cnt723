@@ -7,6 +7,7 @@ ROS driver for the [CNT-723 rotary encoder](http://www.cocores.co.jp/english/cnt
 ROS modules that this package depends on:
 
 - [serial](http://wiki.ros.org/serial)
+- [coms_msgs](https://github.com/tado-aev/coms_msgs)
 
 ## Usage
 
