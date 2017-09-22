@@ -25,7 +25,7 @@ $ roslaunch cnt723 cnt723_node.launch
 
 - `port`: the port name where the CNT-723 is connected to
 - `baudrate`: the baud rate
-- `frequency`: the control loop frequency
+- `frequency`: the rate at which to publish the pulse counts
 
 ## Published Topics
 
