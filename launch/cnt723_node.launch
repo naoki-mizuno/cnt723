@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <node pkg="cnt723" type="cnt723_node" name="cnt723" output="screen">
+  <node pkg="cnt723" type="cnt723_node" name="cnt723" >
     <rosparam command="load" file="$(find cnt723)/configs/coms.yaml"/>
   </node>
 </launch>
